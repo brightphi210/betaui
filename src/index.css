@@ -101,3 +101,17 @@ body {
 .myCodeClass{
   font-family: "IBM Plex Mono", serif !important;
 }
+
+
+@keyframes zoom {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.2);
+  }
+}
+
+.animate-zoom {
+  animation: zoom 2s infinite;
+}
