@@ -23,7 +23,7 @@ const Header = ({isDark, setIsDark, isNavOpen, setIsNavOpen, handleLinkClick}:an
   return (
 
     <div className={`flex justify-center relative z-50 ${isDark === true ? 'text-white' : 'text-black'} `}>
-        <div className='bg-gradient-to-r from-[#03745b] to-[#a64bfc] fixed w-full py-4 text-center lg:text-lg text-sm'>
+        <div className='bg-gradient-to-r from-[#03745b] to-[#a64bfc] text-white fixed w-full py-4 text-center lg:text-lg text-sm'>
             <h2>Web3 Components Coming Soon Beta UI! 🚀</h2>
         </div>
 

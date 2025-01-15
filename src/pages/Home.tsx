@@ -9,7 +9,7 @@ import { IoDocumentTextSharp } from "react-icons/io5";
 import { IoMdCheckmarkCircleOutline } from "react-icons/io";
 
 
-import { CodeBlock, hybrid} from 'react-code-blocks';
+import { CodeBlock} from 'react-code-blocks';
 
 const Home = ({isDark, speed = 3000, direction = 'left' }:any) => {
 
