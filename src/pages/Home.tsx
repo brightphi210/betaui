@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from 'react';
 import {Button } from '../components/Button';
-import { StackIcon } from '../components/StackIcons';
+import { StackIcon, SponsorsIcon } from '../components/StackIcons';
 import { items } from '../components/Works';
 import { BsFillLightningChargeFill } from "react-icons/bs";
 import { FaTools } from "react-icons/fa";
@@ -79,7 +79,7 @@ const Home = ({isDark, speed = 3000, direction = 'left' }:any) => {
         <section id='home' className={`flex overflow-hidden items-center lg:gap-[10rem] lg:pt-[13rem] pt-[10rem] lg:pb-[8rem] 2xl:px-[15rem] xl:px-[10rem] lg:px-[8rem] px-5 ${isDark === true ? dark : light}  `}>
             <div className='w-full justify-center text-center' data-aos="fade-up" data-aos-duration="600">
 
-                <button className='bg-[#082e26] py-2 px-5 rounded-md text-sm text-[#98ffe9] mb-5'>Beta version of Our UI Libary 🚀</button>
+                <button className='bg-[#082e26] py-2 px-5 rounded-md text-sm text-[#98ffe9] mb-5'>Beta version of Beta UI 🚀</button>
                 <h2 className=' 2xl:text-6xl xl:text-4xl lg:text-3xl text-4xl lg:pt-3 pt-0 font-bold'>
                     Simplifying Modern Interface <br className='lg:block hidden'/> Design with 
                     <span className='bg-gradient-to-l from-[#03745b] to-[#03745b] bg-clip-text text-transparent font-extrabold'> Beta UI</span>
@@ -99,6 +99,10 @@ const Home = ({isDark, speed = 3000, direction = 'left' }:any) => {
 
         <div className={`${isDark === true ? dark : light} py-[3rem]`}>
          
+
+
+            {/* =========== SWIPERS ============== */}
+
             <div className={`overflow-hidden whitespace-nowrap w-full `}>
                 <div
                     ref={containerRef}
@@ -132,6 +136,9 @@ const Home = ({isDark, speed = 3000, direction = 'left' }:any) => {
                 </div>
             </div>
 
+
+
+            {/* =========== WHY BETA UI ============== */}
             <section className={`2xl:px-[15rem] xl:px-[10rem] lg:px-[8rem] lg:py-[5rem] py-[3rem] px-5 w-full lg:gap-[5rem] gap-[3rem] `}>
                 <p className='pb-3'>Why build with Beta UI?</p>
                 <h2 className='2xl:text-5xl xl:text-4xl lg:text-3xl text-4xl'>Ship Products  <br className='lg:block hidden'/> <span className='bg-gradient-to-l from-[#03745b] to-[#03745b] bg-clip-text text-transparent'> Faster
@@ -187,7 +194,7 @@ const Home = ({isDark, speed = 3000, direction = 'left' }:any) => {
                 </div>
             </section>
 
-
+            {/* =========== START BUILDING ============== */}
             <div className='grid lg:grid-cols-2 grid-cols-1 gap-10 items-center 2xl:px-[15rem] xl:px-[10rem] lg:px-[8rem] lg:py-[6rem] py-[3rem] px-5'>
                 <div data-aos="fade-up" data-aos-duration="600">
                     <p className=''>Start Building 🚀</p>
@@ -208,19 +215,21 @@ const Home = ({isDark, speed = 3000, direction = 'left' }:any) => {
                     <CodeBlock
                         text={code}
                         language={'jsx'}
-                        showLineNumbers={true}
-                        theme={hybrid}
+                        showLineNumbers={false}
                         customStyle={{
                             margin: '0px 0.75rem',
                             borderRadius: '5px',
                             boxShadow: '1px 2px 3px rgba(0,0,0,0.35)',
                             fontSize: '15px',
+                            borderWidth: '2px',
+                            borderColor : '[#03745b]',
+                            backgroundColor: `${isDark === true ? dark : light}`,
                         }}
                     />
                 </div>
             </div>
 
-
+            {/* =========== SUPPORTED FRAMEWORK ============== */}
             <div className='text-center lg:py-[6rem] py-[3rem] px-5' data-aos="fade-up" data-aos-duration="600">
                 <h2 className=' 2xl:text-5xl xl:text-4xl lg:text-3xl text-4xl lg:pt-3 pt-0 font-normal'>
                     Works with your favorite <br className='lg:block hidden'/> application  
@@ -240,7 +249,7 @@ const Home = ({isDark, speed = 3000, direction = 'left' }:any) => {
                 </div>
             </div>
 
-
+            {/* =========== START NOW ============== */}
             <div className='text-center lg:py-[6rem] py-[3rem] px-5' data-aos="fade-up" data-aos-duration="600">
                 <p className='font-light text-sm pt-5 '>Start now</p>
                 <h2 className=' 2xl:text-5xl xl:text-4xl lg:text-3xl text-4xl lg:pt-3 pt-0 font-normal'>
@@ -251,6 +260,23 @@ const Home = ({isDark, speed = 3000, direction = 'left' }:any) => {
                     <Button title='Discover Components' action={handleMail}/>
                 </div>
             </div>
+
+            <div className='text-center lg:py-[6rem] py-[3rem] px-5' data-aos="fade-up" data-aos-duration="600">
+                <p className='font-light text-sm pt-5 '>Sponsors</p>
+                <h2 className='2xl:text-5xl xl:text-4xl lg:text-3xl text-4xl py-4'>Sponsored by these
+                <span className='bg-gradient-to-l from-[#03745b] to-[#03745b] bg-clip-text text-transparent'> amazing </span> 
+                <br className='lg:block hidden'/>
+                companies </h2>
+                
+                <div className='flex flex-wrap gap-4 justify-center m-auto mt-10'>
+                    {SponsorsIcon.map((icon:any)=>(
+                        <div className={` p-4 rounded-md text-4xl bg-[#78807e]`}>
+                            <img src={icon.image} className='w-20' alt="" />
+                        </div>
+                    ))}
+                </div>
+            </div>
+
         </div>
 
     </div>

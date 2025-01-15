@@ -21,8 +21,13 @@ const Header = ({isDark, setIsDark, isNavOpen, setIsNavOpen, handleLinkClick}:an
 
     
   return (
+
     <div className={`flex justify-center relative z-50 ${isDark === true ? 'text-white' : 'text-black'} `}>
-        <div className={`${isDark === true ? '': 'bg-white'} flex items-center fixed lg:w-[100%] w-[100%]  lg:py-4 py-4 lg:px-[15rem] px-5 backdrop-filter backdrop-blur-3xl bg-opacity-60 `}>
+        <div className='bg-gradient-to-r from-[#03745b] to-[#a64bfc] fixed w-full py-4 text-center lg:text-lg text-sm'>
+            <h2>Web3 Components Coming Soon Beta UI! 🚀</h2>
+        </div>
+
+        <div className={`${isDark === true ? '': 'bg-white'} flex items-center fixed lg:w-[100%] w-[100%] lg:top-[3.5rem] top-[3rem]  lg:py-4 py-4 lg:px-[15rem] px-5 backdrop-filter backdrop-blur-3xl bg-opacity-60 `}>
             <div className='block'>
                 <div className='flex items-center gap-2'>
                     <img src={logo} className='w-5' alt="" />
@@ -56,6 +61,7 @@ const Header = ({isDark, setIsDark, isNavOpen, setIsNavOpen, handleLinkClick}:an
                 </p>
             </div>
         </div>
+        
 
         {isNavOpen === true && 
                 <div className={`lg:hidden block fixed ${isDark === true ? 'bg-neutral-900 text-white' : 'bg-neutral-100 text-neutral-900'} left-0 top-0 p-10 pt-14  w-full h-screen`}>
