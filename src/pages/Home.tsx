@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from 'react';
 import {Button } from '../components/Button';
 import { StackIcon, SponsorsIcon } from '../components/StackIcons';
-import { items } from '../components/Works';
+import { items, stats, users } from '../components/Works';
 import { BsFillLightningChargeFill } from "react-icons/bs";
 import { FaTools } from "react-icons/fa";
 import { MdAlignHorizontalLeft } from "react-icons/md";
@@ -194,6 +194,24 @@ const Home = ({isDark, speed = 3000, direction = 'left' }:any) => {
                 </div>
             </section>
 
+
+            <section className='2xl:px-[15rem] xl:px-[10rem] lg:px-[8rem] lg:py-[5rem] py-[3rem] px-5 w-full lg:gap-[5rem] gap-[3rem] '>
+                <div className='text-center font-normal' data-aos="fade-up" data-aos-duration="600">
+                    <h2 className='text-2xl'>Teams / Startups using BetaUI</h2>
+                    <p className='text-lg text-neutral-300'>From developers to startups/companies</p>
+                </div>
+                <div className='grid lg:grid-cols-4 grid-cols-2 pt-10' data-aos="fade-up" data-aos-duration="600">
+                    {users.map((user)=>(
+                        <div className='border border-[#0a2b25] p-4 flex gap-2 items-center justify-center opacity-80'>
+                            <div className='w-6'>
+                                <img src={user.image} alt={user.name} className='' />
+                            </div>
+                            <h2>{user.name}</h2>
+                        </div>
+                    ))}
+                </div>
+            </section>
+
             {/* =========== START BUILDING ============== */}
             <div className='grid lg:grid-cols-2 grid-cols-1 gap-10 items-center 2xl:px-[15rem] xl:px-[10rem] lg:px-[8rem] lg:py-[6rem] py-[3rem] px-5'>
                 <div data-aos="fade-up" data-aos-duration="600">
@@ -228,6 +246,24 @@ const Home = ({isDark, speed = 3000, direction = 'left' }:any) => {
                     />
                 </div>
             </div>
+
+
+            <section className='2xl:px-[15rem] xl:px-[10rem] lg:px-[8rem] lg:py-[5rem] py-[3rem] px-5 w-full lg:gap-[5rem] gap-[3rem] ' data-aos="fade-up" data-aos-duration="600">
+                <div className='text-center font-normal'>
+                    <h2 className='text-4xl'> <br /> </h2>
+                    <h2 className='2xl:text-6xl xl:text-4xl lg:text-3xl text-3xl py-4 font-semibold'>Built for all <br className='lg:block hidden'/> 
+                    <span className='bg-gradient-to-r from-teal-400 to-[#03745b] bg-clip-text text-transparent'>developers</span> </h2>
+                    <p className='text-lg text-neutral-300'>From developers to startups/companies</p>
+                </div>
+                <div className='grid lg:grid-cols-3 lg:px-[5rem] grid-cols-2 pt-10 justify-center'>
+                    {stats.map((stat)=>(
+                        <div className='border border-[#0a2b25] p-4 flex flex-col gap-1 items-center justify-center opacity-80'>
+                            <h2 className='lg:text-5xl text-4xl text-teal-400 font-semibold'>{stat.number}</h2>
+                            <h2 className='text-sm'>{stat.label}</h2>
+                        </div>
+                    ))}
+                </div>
+            </section>
 
             {/* =========== SUPPORTED FRAMEWORK ============== */}
             <div className='text-center lg:py-[6rem] py-[3rem] px-5' data-aos="fade-up" data-aos-duration="600">

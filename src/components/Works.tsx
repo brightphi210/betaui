@@ -8,6 +8,9 @@ import e from '../assets/comimages/e.webp'
 import f from '../assets/comimages/f.png'
 
 
+import beta from '../assets/Beta-Ui---.png'
+import welearn from '../assets/logowe.png'
+
 export const items = [
     a,
     b,
@@ -15,4 +18,49 @@ export const items = [
     d,
     e,
     f
+]
+
+export const users = [
+    {
+        name: 'Welearnglobal',
+        image: welearn,
+        url: 'https://welearnglobal.net/'
+    },
+
+    {
+        name: 'BetaUI Docs',
+        image: beta,
+        url: 'https://betauidocs.vercel.app/'
+    },
+
+    {
+        name: 'Welearnglobal',
+        image: welearn,
+        url: 'https://welearnglobal.net/'
+    },
+
+
+    {
+        name: 'Welearnglobal',
+        image: welearn,
+        url: 'https://welearnglobal.net/'
+    },
+
+]
+
+export const stats = [
+    {
+        number: '300k+',
+        label: 'Downloads / weekly'
+    },
+
+    {
+        number: '1',
+        label: 'Github star'
+    },
+
+    {
+        number: '10',
+        label: 'Telegram members'
+    },
 ]
