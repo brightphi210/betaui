@@ -50,7 +50,7 @@ export const users = [
 
 export const stats = [
     {
-        number: '300k+',
+        number: '300+',
         label: 'Downloads / weekly'
     },
 
