@@ -19,7 +19,13 @@ export const StackIcon = [
 
 
 export const SponsorsIcon = [
-    {'image': sponsora, name: 'Borderless Dev'},
-    {'image': sponsorb,name: 'Byte Onchain News'}, 
+    {
+        'image': sponsora, 
+        name: 'Borderless Dev',
+    },
+    {
+        'image': sponsorb,
+        name: 'Byte Onchain News'
+    }, 
      
 ]

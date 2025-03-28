@@ -11,6 +11,11 @@ import f from '../assets/comimages/f.png'
 import beta from '../assets/Beta-Ui---.png'
 import welearn from '../assets/logowe.png'
 
+import { FaRegStar } from "react-icons/fa";
+import { PiUsersBold } from "react-icons/pi";
+import { MdOutlineFileDownload } from "react-icons/md";
+
+
 export const items = [
     a,
     b,
@@ -50,17 +55,20 @@ export const users = [
 
 export const stats = [
     {
-        number: '300+',
-        label: 'Downloads / weekly'
+        number: '1,200+',
+        label: 'Total Downloads',
+        "icon": <MdOutlineFileDownload />
     },
 
     {
-        number: '1',
-        label: 'Github star'
+        number: '3',
+        label: 'Github star',
+        "icon": <FaRegStar />
     },
 
     {
-        number: '10',
-        label: 'Telegram members'
+        number: '15',
+        label: 'Telegram members',
+        "icon": <PiUsersBold />
     },
 ]

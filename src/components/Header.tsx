@@ -18,8 +18,6 @@ const Header = ({isDark, setIsDark, isNavOpen, setIsNavOpen}:any) => {
     }
 
 
-
-    
   return (
 
     <div className={`flex justify-center relative z-50 ${isDark === true ? 'text-white' : 'text-black'} `}>

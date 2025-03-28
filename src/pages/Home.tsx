@@ -12,7 +12,7 @@ import { BiCode } from 'react-icons/bi';
 
 const Home = ({isDark, speed = 3000, direction = 'left' }:any) => {
 
-    const dark = 'bg-gradient-to-bl from-black via-gray-950 to-black text-white '
+    const dark = 'bg-gradient-to-bl from-gray-950 via-gray-950 to-gray-950 text-white '
     const light = 'bg-gray-50 text-black'
 
     const handleMail = () => {
@@ -197,7 +197,7 @@ export default function Example() {
                 </div>
                 <div className='grid lg:grid-cols-4 grid-cols-2 text-sm gap-4 pt-10' data-aos="fade-up" data-aos-duration="600">
                     {users.map((user)=>(
-                        <div className={`${ isDark === true ?  'bg-neutral-800 text-white' : 'bg-gray-200 text-gray-800' } rounded-md p-4 flex gap-2 items-center justify-center opacity-80`}>
+                        <div className={`${ isDark === true ?  'bg-gray-900 text-white' : 'bg-gray-200 text-gray-800' } rounded-md p-4 flex gap-2 items-center justify-center opacity-80`}>
                             <h2>{user.name}</h2>
                         </div>
                     ))}
@@ -216,7 +216,9 @@ export default function Example() {
                 <div className='grid lg:grid-cols-3 lg:px-[5rem] grid-cols-2 pt-10 justify-center'>
                     {stats.map((stat)=>(
                         <div className={`${isDark === true ? 'border border-gray-800' : 'border border-gray-300'} p-4 flex flex-col gap-1 items-center justify-center opacity-80`}>
-                            <h2 className='lg:text-3xl text-3xl bg-gradient-to-r from-purple-500 to-blue-500 bg-clip-text text-transparent font-semibold'>{stat.number}</h2>
+                            <h2 className='lg:text-2xl text-2xl flex items-center gap-3 bg-gradient-to-r from-purple-500 to-blue-500 bg-clip-text text-transparent font-semibold'>
+                            {stat.number}<span className='text-white text-2xl'>{stat.icon}</span> 
+                            </h2>
                             <h2 className='text-sm'>{stat.label}</h2>
                         </div>
                     ))}
