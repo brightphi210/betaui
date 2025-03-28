@@ -3,7 +3,8 @@ import Footer from "./components/Footer"
 import Header from "./components/Header"
 import Home from "./pages/Home"
 import { motion } from "framer-motion";
-import logo from '../src/assets/icon.png'
+// import logo from '../src/assets/icon.png'
+import logo from '../src/assets/Beta-Ui---.png'
 
 
 
@@ -54,7 +55,7 @@ function App() {
       <div className="bg-gradient-to-r from-stone-950 to-neutral-950 h-screen justify-center flex items-center">
         <img 
           src={logo} 
-          className="w-16 animate-zoom" 
+          className="w-14 animate-zoom" 
           alt="Logo" 
         />
     </div>
