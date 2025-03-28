@@ -3,12 +3,12 @@ import {Button } from '../components/Button';
 import { StackIcon, SponsorsIcon } from '../components/StackIcons';
 import { stats, users } from '../components/Works';
 import { BsArrowRight, BsFillLightningChargeFill, BsStar } from "react-icons/bs";
-import { FaForward, FaTools } from "react-icons/fa";
+import {FaTools } from "react-icons/fa";
 import { MdAlignHorizontalLeft } from "react-icons/md";
 import { IoDocumentTextSharp } from "react-icons/io5";
 import { LuGithub } from "react-icons/lu";
 import { MdContentCopy } from "react-icons/md";
-import { BiChevronRight, BiCode } from 'react-icons/bi';
+import { BiCode } from 'react-icons/bi';
 
 const Home = ({isDark, speed = 3000, direction = 'left' }:any) => {
 
@@ -71,7 +71,7 @@ const Home = ({isDark, speed = 3000, direction = 'left' }:any) => {
                     <Button title='Get Started' action={handleMail}/>
 
                     <a href="https://github.com/brightphi210/brightui" target="_blank" rel="noopener noreferrer">
-                        <button className='bg-neutral-800 flex items-center cursor-pointer gap-2 text-sm text-white lg:w-fit font-light py-3 px-5 rounded-md cursor-default'>
+                        <button className='bg-neutral-800 flex items-center gap-2 text-sm text-white lg:w-fit font-light py-3 px-5 rounded-md cursor-default'>
                             <span><LuGithub className='text-lg' /></span> Github
                         </button>
                     </a>
