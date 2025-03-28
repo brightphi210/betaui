@@ -1,20 +1,13 @@
 import { useEffect, useRef, useState } from 'react';
 import {Button } from '../components/Button';
 import { StackIcon, SponsorsIcon } from '../components/StackIcons';
-import { items, stats, users } from '../components/Works';
+import { stats, users } from '../components/Works';
 import { BsFillLightningChargeFill } from "react-icons/bs";
 import { FaTools } from "react-icons/fa";
 import { MdAlignHorizontalLeft } from "react-icons/md";
 import { IoDocumentTextSharp } from "react-icons/io5";
-import { IoMdCheckmarkCircleOutline } from "react-icons/io";
 import { LuGithub } from "react-icons/lu";
 import { MdContentCopy } from "react-icons/md";
-
-
-
-
-
-import { CodeBlock} from 'react-code-blocks';
 import { BiCode } from 'react-icons/bi';
 
 const Home = ({isDark, speed = 3000, direction = 'left' }:any) => {
@@ -57,27 +50,6 @@ const Home = ({isDark, speed = 3000, direction = 'left' }:any) => {
   
       return () => clearInterval(intervalId)
     }, [currentIndex, speed, direction])
-
-    const code = `
-        npx create-react-app my-beta-ui-app
-        cd my-beta-ui-app
-
-        npm install @brightcodeui/beta-ui
-        # or
-        yarn add @brightcodeui/beta-ui
-
-
-        import { Button, Input } from '@brightcodeui/beta-ui';
-
-        function App() {
-        return (
-            <div>
-                <Button>Click me</Button>
-                <Input placeholder="Enter text" />
-            </div>
-        );
-        }
-    `
 
 
   return (

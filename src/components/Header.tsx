@@ -1,5 +1,3 @@
-
-import logo from '../assets/icon.png'
 import { LuSunDim } from "react-icons/lu";
 import { IoMdMoon } from "react-icons/io";
 import { IoCloseSharp } from "react-icons/io5";
@@ -9,12 +7,11 @@ import { RiTelegram2Fill  } from "react-icons/ri";
 
 
 
-const Header = ({isDark, setIsDark, isNavOpen, setIsNavOpen, handleLinkClick}:any) => {
+const Header = ({isDark, setIsDark, isNavOpen, setIsNavOpen}:any) => {
 
     const handleDark = () => {
         setIsDark(!isDark)
     }
-
 
     const handleShowNavbar = () => {
         setIsNavOpen(!isNavOpen)
@@ -42,11 +39,11 @@ const Header = ({isDark, setIsDark, isNavOpen, setIsNavOpen, handleLinkClick}:an
             </div>
 
             <ul className='hidden lg:flex items-center gap-10 text-base ml-auto'>
-                <a href="" target="_blank" rel="noopener noreferrer">
+                <a href="https://github.com/brightphi210/brightui" target="_blank" rel="noopener noreferrer">
                     <li className='cursor-pointer text-2xl hover:scale-110'><FaGithub /></li>
                 </a>
 
-                <a href="" target="_blank" rel="noopener noreferrer">
+                <a href="https://t.me/betauilibary" target="_blank" rel="noopener noreferrer">
                     <li className='cursor-pointer text-2xl hover:scale-110'><RiTelegram2Fill  /></li>
                 </a>
                 <a href="https://betauidocs.vercel.app/docs/Beginning/intro">
@@ -78,11 +75,11 @@ const Header = ({isDark, setIsDark, isNavOpen, setIsNavOpen, handleLinkClick}:an
         {isNavOpen === true && 
             <div className={`lg:hidden block fixed backdrop-filter backdrop-blur-3xl bg-opacity-60 ${isDark === true ? 'bg-neutral-900 text-white' : 'bg-neutral-100 text-neutral-900'} left-0 top-[3.5rem] p-10 pt-14  w-full h-screen`}>
                 <ul className='flex-col items-center text-2xl ml-auto '>
-                    <a href="" target="_blank" rel="noopener noreferrer">
+                    <a href="https://github.com/brightphi210/brightui" target="_blank" rel="noopener noreferrer">
                         <li className='cursor-pointer text-xl mb-8 flex items-center gap-2'><FaGithub /> Github</li>
                     </a>
 
-                    <a href="" target="_blank" rel="noopener noreferrer">
+                    <a href="https://t.me/betauilibary" target="_blank" rel="noopener noreferrer">
                         <li className='cursor-pointer text-xl mb-8 flex items-center gap-2'><RiTelegram2Fill /> Telegram</li>
                     </a>
 
