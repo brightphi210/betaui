@@ -2,13 +2,13 @@ import { useEffect, useRef, useState } from 'react';
 import {Button } from '../components/Button';
 import { StackIcon, SponsorsIcon } from '../components/StackIcons';
 import { stats, users } from '../components/Works';
-import { BsFillLightningChargeFill } from "react-icons/bs";
-import { FaTools } from "react-icons/fa";
+import { BsArrowRight, BsFillLightningChargeFill, BsStar } from "react-icons/bs";
+import { FaForward, FaTools } from "react-icons/fa";
 import { MdAlignHorizontalLeft } from "react-icons/md";
 import { IoDocumentTextSharp } from "react-icons/io5";
 import { LuGithub } from "react-icons/lu";
 import { MdContentCopy } from "react-icons/md";
-import { BiCode } from 'react-icons/bi';
+import { BiChevronRight, BiCode } from 'react-icons/bi';
 
 const Home = ({isDark, speed = 3000, direction = 'left' }:any) => {
 
@@ -69,9 +69,12 @@ const Home = ({isDark, speed = 3000, direction = 'left' }:any) => {
                 
                 <div className='flex justify-center m-auto items-center mt-5 gap-3'>
                     <Button title='Get Started' action={handleMail}/>
-                    <button className='bg-neutral-800 flex items-center gap-2 text-sm text-white lg:w-fit font-light py-3 px-5 rounded-md cursor-default'>
-                        <span><LuGithub className='text-lg' /></span> Github
-                    </button>
+
+                    <a href="https://github.com/brightphi210/brightui" target="_blank" rel="noopener noreferrer">
+                        <button className='bg-neutral-800 flex items-center cursor-pointer gap-2 text-sm text-white lg:w-fit font-light py-3 px-5 rounded-md cursor-default'>
+                            <span><LuGithub className='text-lg' /></span> Github
+                        </button>
+                    </a>
                 </div>
 
             </div>
@@ -99,14 +102,14 @@ const Home = ({isDark, speed = 3000, direction = 'left' }:any) => {
               <div className="p-4 overflow-x-auto text-sm font-mono">
                 <pre className="text-sm">
                   <code className="language-tsx">
-                    {`import { Button } from "betaui/components";
+                    {`import { Button } from '@brightcodeui/beta-ui';
 
-export default function Example() {
+export const App = () => {
     return (
     <div className="space-y-4">
         <h2 className="text-2xl font-bold">Welcome to BetaUI</h2>
         <p>Start building beautiful interfaces in minutes</p>
-        <Button>Get Started</Button>
+        <Button color="blue">Get Started</Button>
     </div>
     );
 }`}
@@ -122,6 +125,12 @@ export default function Example() {
                 <h2 className='2xl:text-3xl xl:text-3xl lg:text-3xl text-3xl text-center'>Ship <span className='bg-gradient-to-r from-purple-500 to-blue-500 bg-clip-text text-transparent font-extrabold'> Faster
                     </span> with Beta UI
                 </h2>
+                
+                <a href="https://github.com/brightphi210/brightui" target="_blank" rel="noopener noreferrer">
+                    <p className='text-center cursor-pointer mt-4 flex justify-center items-center gap-2 hover:text-gray-500'>Drop a start on github 
+                        <span className='text-sky-500 flex items-center gap-2 hover:text-gray-500'>(<LuGithub />< BsStar/>)</span> <BsArrowRight />
+                    </p>
+                </a>
 
                 <div className='grid 2xl:grid-cols-3 xl:grid-cols-2 lg:grid-cols-2 grid-cols-1 pt-10 gap-4'>
                     <div data-aos="fade-up" data-aos-duration="600" className={` p-5 border rounded-lg 
