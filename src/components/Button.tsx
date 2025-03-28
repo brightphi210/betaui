@@ -14,7 +14,7 @@ interface Button3Props{
 }
 export const Button: React.FC<ButtonProps> = ({title, action} : ButtonProps) => {
   return (
-    <button onClick={action} className='flex gap-3 font-normal text-sm cursor-pointer items-center bg-[#025744] text-white px-5 py-3 justify-center lg:w-fit w-full rounded-md '>
+    <button onClick={action} className={`flex gap-3 font-normal text-sm cursor-pointer items-center bg-gray-100 border border-gray-300 text-gray-800 px-5 py-3 justify-center lg:w-fit rounded-md`}>
         {title}
         <IoArrowForward />
     </button>

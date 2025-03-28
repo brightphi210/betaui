@@ -7,13 +7,19 @@ import { FaTools } from "react-icons/fa";
 import { MdAlignHorizontalLeft } from "react-icons/md";
 import { IoDocumentTextSharp } from "react-icons/io5";
 import { IoMdCheckmarkCircleOutline } from "react-icons/io";
+import { LuGithub } from "react-icons/lu";
+import { MdContentCopy } from "react-icons/md";
+
+
+
 
 
 import { CodeBlock} from 'react-code-blocks';
+import { BiCode } from 'react-icons/bi';
 
 const Home = ({isDark, speed = 3000, direction = 'left' }:any) => {
 
-    const dark = 'bg-gradient-to-bl from-black via-[#011108] to-black text-white '
+    const dark = 'bg-gradient-to-bl from-black via-gray-950 to-black text-white '
     const light = 'bg-gray-50 text-black'
 
     const handleMail = () => {
@@ -76,92 +82,91 @@ const Home = ({isDark, speed = 3000, direction = 'left' }:any) => {
 
   return (
     <div>
-        <section id='home' className={`flex overflow-hidden items-center lg:gap-[10rem] lg:pt-[13rem] pt-[10rem] lg:pb-[8rem] 2xl:px-[15rem] xl:px-[10rem] lg:px-[8rem] px-5 ${isDark === true ? dark : light}  `}>
+        <section id='home' className={`flex overflow-hidden items-center lg:gap-[10rem] lg:pt-[13rem] pt-[10rem] lg:pb-[2rem] 2xl:px-[15rem] xl:px-[10rem] lg:px-[8rem] px-5 ${isDark === true ? dark : light}  `}>
             <div className='w-full justify-center text-center' data-aos="fade-up" data-aos-duration="600">
 
-                <button className='bg-[#082e26] py-2 px-5 rounded-md text-sm text-[#98ffe9] mb-5'>Beta version of Beta UI 🚀</button>
+                <button className='bg-neutral-200 py-2 px-5 rounded-full text-sm text-gray-800 mb-5'>Beta version of Beta UI 🚀</button>
                 <h2 className=' 2xl:text-6xl xl:text-4xl lg:text-3xl text-4xl lg:pt-3 pt-0 font-bold'>
                     Simplifying Modern Interface <br className='lg:block hidden'/> Design with 
-                    <span className='bg-gradient-to-l from-[#03745b] to-[#03745b] bg-clip-text text-transparent font-extrabold'> Beta UI</span>
+                    <span className='bg-gradient-to-r from-purple-500 to-blue-500 bg-clip-text text-transparent font-extrabold'> Beta UI</span>
                 </h2>
                 <p className='lg:w-[50%] flex justify-center text-center m-auto w-full  pt-6 2xl:text-lg xl:text-base lg:text-sm text-sm  font-light lg:leading-[40px] leading-[20px]'>
                     Beta UI is a sleek, modular, and developer-friendly UI library designed to accelerate 
                     the creation of modern, responsive, and accessible user interfaces.
                 </p>
                 
-                <div className='flex lg:flex-row flex-col justify-center m-auto items-center mt-5 gap-3'>
-                    <Button title='Start Building' action={handleMail}/>
-                    <button className='border border-[#145547] lg:w-fit w-full font-light py-3 px-5 rounded-lg cursor-default'>npm install @brightcodeui/beta-ui</button>
+                <div className='flex justify-center m-auto items-center mt-5 gap-3'>
+                    <Button title='Get Started' action={handleMail}/>
+                    <button className='bg-neutral-800 flex items-center gap-2 text-sm text-white lg:w-fit font-light py-3 px-5 rounded-md cursor-default'>
+                        <span><LuGithub className='text-lg' /></span> Github
+                    </button>
                 </div>
 
             </div>
+
         </section>
 
+        
+
         <div className={`${isDark === true ? dark : light} py-[3rem]`}>
-         
 
-
-            {/* =========== SWIPERS ============== */}
-
-            <div className={`overflow-hidden whitespace-nowrap w-full `}>
-                <div
-                    ref={containerRef}
-                    className="inline-flex transition-transform duration-1000 ease-linear"
-                    style={{ transform: `translateX(${-currentIndex}px)` }}
-                    >
-                    {items.map((item: any, index: any) => (
-                        <div
-                        key={index}
-                        className={`flex-shrink-0 overflow-hidden lg:w-[25%]  p-5 w-[50%] mx-2 rounded-lg ${isDark === true ? 'border border-[#0c3129]' : 'border border-[#e2e7e6]'}`}
-                        >
-                        <img
-                            src={item}
-                            alt=""
-                            className="w-full h-full object-cover rounded-lg"
-                        />
-                        </div>
-                    ))}
-                    {items.map((item: any, index: any) => (
-                        <div
-                        key={`duplicate-${index}`}
-                        className={`flex-shrink-0 overflow-hidden lg:w-[25%]  p-5 w-[50%] mx-2 rounded-lg ${isDark === true ? 'border border-[#0c3129]' : 'border border-[#e2e7e6]'}`}
-                        >
-                        <img
-                            src={item}
-                            alt=""
-                            className="w-full h-full object-cover rounded-lg"
-                        />
-                        </div>
-                    ))}
+        {/* Code Preview */}
+          <div className="max-w-4xl w-[90%] mx-auto">
+            <div className="rounded-lg border-2 border-neutral-200 shadow-sm">
+              <div className="flex items-center border-b-2 border-neutral-200 px-4 h-10">
+                <div className="flex items-center gap-1">
+                  <div className="h-3 w-3 rounded-full bg-red-500"></div>
+                  <div className="h-3 w-3 rounded-full bg-yellow-500"></div>
+                  <div className="h-3 w-3 rounded-full bg-green-500"></div>
                 </div>
+                <div className="flex-1 text-center text-sm text-muted-foreground">Code Sample</div>
+                <button className="p-1 hover:bg-muted rounded">
+                  <MdContentCopy className="h-4 w-4 text-muted-foreground" />
+                </button>
+              </div>
+              <div className="p-4 overflow-x-auto text-sm font-mono">
+                <pre className="text-sm">
+                  <code className="language-tsx">
+                    {`import { Button } from "betaui/components";
+
+export default function Example() {
+    return (
+    <div className="space-y-4">
+        <h2 className="text-2xl font-bold">Welcome to BetaUI</h2>
+        <p>Start building beautiful interfaces in minutes</p>
+        <Button>Get Started</Button>
+    </div>
+    );
+}`}
+                  </code>
+                </pre>
+              </div>
             </div>
-
-
-
+          </div>
+         
             {/* =========== WHY BETA UI ============== */}
-            <section className={`2xl:px-[15rem] xl:px-[10rem] lg:px-[8rem] lg:py-[5rem] py-[3rem] px-5 w-full lg:gap-[5rem] gap-[3rem] `}>
-                <p className='pb-3'>Why build with Beta UI?</p>
-                <h2 className='2xl:text-5xl xl:text-4xl lg:text-3xl text-4xl'>Ship Products  <br className='lg:block hidden'/> <span className='bg-gradient-to-l from-[#03745b] to-[#03745b] bg-clip-text text-transparent'> Faster
+            <section className={`2xl:px-[15rem] xl:px-[10rem] lg:px-[8rem] lg:py-[3rem] py-[3rem] px-5 w-full lg:gap-[5rem] gap-[3rem] `}>
+                <p className='pb-3 text-center'>Why build with Beta UI?</p>
+                <h2 className='2xl:text-3xl xl:text-3xl lg:text-3xl text-3xl text-center'>Ship <span className='bg-gradient-to-r from-purple-500 to-blue-500 bg-clip-text text-transparent font-extrabold'> Faster
                     </span> with Beta UI
                 </h2>
 
-                <div className='grid 2xl:grid-cols-4 xl:grid-cols-2 lg:grid-cols-2 grid-cols-1 pt-10 gap-4'>
+                <div className='grid 2xl:grid-cols-3 xl:grid-cols-2 lg:grid-cols-2 grid-cols-1 pt-10 gap-4'>
                     <div data-aos="fade-up" data-aos-duration="600" className={` p-5 border rounded-lg 
-                        ${isDark === true ? 'bg-gradient-to-r from-[#08110f] to-[#01110e] border-[#0a2b25]' : 'bg-gradient-to-r border-[#ced6d5] from-[#fdfdfd] to-[#f9fffe]'}`}>
-                        <p className='bg-[#0a2b25] text-white flex items-center justify-center rounded-full w-fit p-3'><BsFillLightningChargeFill /></p>
+                        ${isDark === true ? 'bg-gray-950 border-gray-800' : 'bg-gradient-to-r border-[#ced6d5] from-[#fdfdfd] to-[#f9fffe]'}`}>
+                        <p className='bg-gray-800 text-white flex items-center justify-center rounded-full w-fit p-3'><BsFillLightningChargeFill /></p>
                         <h2 className='py-4 text-lg'>Increase Development Speed</h2>
                         <p className='text-sm font-normal'>
                             Beta UI offers a rich library of predesigned, 
                             reusable components that eliminate the need for building UI 
-                            elements from scratch. This enables developers to focus more on 
-                            business logic and functionality, speeding up project timelines.
+                            elements from scratch.
                         </p>
                     </div>
 
 
                     <div data-aos="fade-up" data-aos-duration="600" className={` p-5 border rounded-lg 
-                        ${isDark === true ? 'bg-gradient-to-r from-[#08110f] to-[#01110e] border-[#0a2b25]' : 'bg-gradient-to-r border-[#ced6d5] from-[#fdfdfd] to-[#f9fffe]'}`}>
-                        <p className='bg-[#0a2b25] text-white flex items-center justify-center rounded-full w-fit p-3'><FaTools /></p>
+                        ${isDark === true ? 'bg-gray-950 border-gray-800' : 'bg-gradient-to-r border-[#ced6d5] from-[#fdfdfd] to-[#f9fffe]'}`}>
+                        <p className='bg-gray-800 text-white flex items-center justify-center rounded-full w-fit p-3'><FaTools /></p>
                         <h2 className='py-4 text-lg'>Intuitive customization</h2>
                         <p className='text-sm font-normal'>
                             Our components are as flexible as they are 
@@ -171,94 +176,75 @@ const Home = ({isDark, speed = 3000, direction = 'left' }:any) => {
                     </div>
 
                     <div data-aos="fade-up" data-aos-duration="600" className={` p-5 border rounded-lg 
-                        ${isDark === true ? 'bg-gradient-to-r from-[#08110f] to-[#01110e] border-[#0a2b25]' : 'bg-gradient-to-r border-[#ced6d5] from-[#fdfdfd] to-[#f9fffe]'}`}>
-                        <p className='bg-[#0a2b25] text-white flex items-center justify-center rounded-full w-fit p-3'><MdAlignHorizontalLeft /></p>
+                        ${isDark === true ? 'bg-gray-950 border-gray-800' : 'bg-gradient-to-r border-[#ced6d5] from-[#fdfdfd] to-[#f9fffe]'}`}>
+                        <p className='bg-gray-800 text-white flex items-center justify-center rounded-full w-fit p-3'><MdAlignHorizontalLeft /></p>
                         <h2 className='py-4 text-lg'>Consistent Design System</h2>
                         <p className='text-sm font-normal'>
                             With a cohesive design system, Beta UI ensures visual 
-                            consistency across applications. It includes standardized typography, 
-                            color schemes, and responsive layouts, resulting in a polished and 
-                            professional look without extra design effort.
+                            consistency across applications.
                         </p>
                     </div>
 
                     <div data-aos="fade-up" data-aos-duration="600" className={` p-5 border rounded-lg 
-                        ${isDark === true ? 'bg-gradient-to-r from-[#08110f] to-[#01110e] border-[#0a2b25]' : 'bg-gradient-to-r border-[#ced6d5] from-[#fdfdfd] to-[#f9fffe]'}`}>
-                        <p className='bg-[#0a2b25] text-white flex items-center justify-center rounded-full w-fit p-3'><IoDocumentTextSharp /></p>
+                        ${isDark === true ? 'bg-gray-950 border-gray-800' : 'bg-gradient-to-r border-[#ced6d5] from-[#fdfdfd] to-[#f9fffe]'}`}>
+                        <p className='bg-gray-800 text-white flex items-center justify-center rounded-full w-fit p-3'><BiCode /></p>
+                        <h2 className='py-4 text-lg'>TypeScript Ready</h2>
+                        <p className='text-sm font-normal'>Written in TypeScript with full type definitions.</p>
+                    </div>
+
+
+                    <div data-aos="fade-up" data-aos-duration="600" className={` p-5 border rounded-lg 
+                        ${isDark === true ? 'bg-gray-950 border-gray-800' : 'bg-gradient-to-r border-[#ced6d5] from-[#fdfdfd] to-[#f9fffe]'}`}>
+                        <p className='bg-gray-800 text-white flex items-center justify-center rounded-full w-fit p-3'><IoDocumentTextSharp /></p>
                         <h2 className='py-4 text-lg'>Unrivaled documentation</h2>
                         <p className='text-sm font-normal'>
                             Whatever challenge you face, our documentation has you covered. 
                             it contains solutions, guides, and best practices crafted to keep you moving forward.
                         </p>
                     </div>
+
+                    <div data-aos="fade-up" data-aos-duration="600" className={` p-5 border rounded-lg 
+                        ${isDark === true ? 'bg-gray-950 border-gray-800' : 'bg-gradient-to-r border-[#ced6d5] from-[#fdfdfd] to-[#f9fffe]'}`}>
+                        <p className='bg-gray-800 text-white flex items-center justify-center rounded-full w-fit p-3'><LuGithub /></p>
+                        <h2 className='py-4 text-lg'>Open Source</h2>
+                        <p className='text-sm font-normal'>
+                            Free and open source under the MIT license.
+                        </p>
+                    </div>
                 </div>
             </section>
 
 
-            <section className='2xl:px-[15rem] xl:px-[10rem] lg:px-[8rem] lg:py-[5rem] py-[3rem] px-5 w-full lg:gap-[5rem] gap-[3rem] '>
+            <section className='2xl:px-[15rem] xl:px-[10rem] lg:px-[8rem] lg:py-[3rem] py-[2rem] px-5 w-full lg:gap-[5rem] gap-[3rem] '>
                 <div className='text-center font-normal' data-aos="fade-up" data-aos-duration="600">
-                    <h2 className='text-2xl'>Teams / Startups using BetaUI</h2>
-                    <p className='text-lg text-neutral-300'>From developers to startups/companies</p>
+                    <p className='text-base'>From developers to Companies</p>
+                    <h2 className='text-3xl'>Teams using 
+                        <span className='bg-gradient-to-r from-purple-500 to-blue-500 bg-clip-text text-transparent font-extrabold'> BetaUI
+                        </span>
+                    </h2>
                 </div>
-                <div className='grid lg:grid-cols-4 grid-cols-2 pt-10' data-aos="fade-up" data-aos-duration="600">
+                <div className='grid lg:grid-cols-4 grid-cols-2 text-sm gap-4 pt-10' data-aos="fade-up" data-aos-duration="600">
                     {users.map((user)=>(
-                        <div className='border border-[#0a2b25] p-4 flex gap-2 items-center justify-center opacity-80'>
-                            <div className='w-6'>
-                                <img src={user.image} alt={user.name} className='' />
-                            </div>
+                        <div className={`${ isDark === true ?  'bg-neutral-800 text-white' : 'bg-gray-200 text-gray-800' } rounded-md p-4 flex gap-2 items-center justify-center opacity-80`}>
                             <h2>{user.name}</h2>
                         </div>
                     ))}
                 </div>
             </section>
 
-            {/* =========== START BUILDING ============== */}
-            <div className='grid lg:grid-cols-2 grid-cols-1 gap-10 items-center 2xl:px-[15rem] xl:px-[10rem] lg:px-[8rem] lg:py-[6rem] py-[3rem] px-5'>
-                <div data-aos="fade-up" data-aos-duration="600">
-                    <p className=''>Start Building 🚀</p>
-                    <h2 className='2xl:text-6xl xl:text-4xl lg:text-3xl text-4xl py-4'>Start building <br className='lg:block hidden'/> 
-                    now  with <span className='bg-gradient-to-l from-[#03745b] to-[#03745b] bg-clip-text text-transparent'>Beta UI</span> </h2>
-                    
-                    <div className='lg:w-[70%] font-light '>
-                        <p className='text-neutral-400'>Spend less time writing UI code and more time building a great experience for your customers.</p>
-                        <ul className='pt-5 text-lg'>
-                            <li className='flex items-center gap-3'><IoMdCheckmarkCircleOutline className='text-[#1f9279]'/> Setup your project</li>
-                            <li className='flex items-center gap-3'><IoMdCheckmarkCircleOutline className='text-[#1f9279]'/> Install Beta UI Package</li>
-                            <li className='flex items-center gap-3'><IoMdCheckmarkCircleOutline className='text-[#1f9279]'/> Start using our components</li>
-                        </ul>
-                    </div>
-                </div>
-                
-                <div className='myCodeClass' data-aos="fade-up" data-aos-duration="600">
-                    <CodeBlock
-                        text={code}
-                        language={'jsx'}
-                        showLineNumbers={false}
-                        customStyle={{
-                            margin: '0px 0.75rem',
-                            borderRadius: '5px',
-                            boxShadow: '1px 2px 3px rgba(0,0,0,0.35)',
-                            fontSize: '15px',
-                            borderWidth: '2px',
-                            borderColor : '[#03745b]',
-                            backgroundColor: `${isDark === true ? dark : light}`,
-                        }}
-                    />
-                </div>
-            </div>
-
-
-            <section className='2xl:px-[15rem] xl:px-[10rem] lg:px-[8rem] lg:py-[5rem] py-[3rem] px-5 w-full lg:gap-[5rem] gap-[3rem] ' data-aos="fade-up" data-aos-duration="600">
+            <section className='2xl:px-[15rem] xl:px-[10rem] lg:px-[8rem] lg:py-[3rem] py-[2rem] px-5 w-full lg:gap-[5rem] gap-[3rem] ' 
+                data-aos="fade-up" data-aos-duration="600">
                 <div className='text-center font-normal'>
-                    <h2 className='text-4xl'> <br /> </h2>
-                    <h2 className='2xl:text-6xl xl:text-4xl lg:text-3xl text-3xl py-4 font-semibold'>Built for all <br className='lg:block hidden'/> 
-                    <span className='bg-gradient-to-r from-teal-400 to-[#03745b] bg-clip-text text-transparent'>developers</span> </h2>
-                    <p className='text-lg text-neutral-300'>From developers to startups/companies</p>
+              
+                    <p className='text-base'>Built by developers for developer</p>
+                    <h2 className='2xl:text-3xl xl:text-3xl lg:text-3xl text-3xl py-4 '>Built for all
+                        <span className='bg-gradient-to-r from-purple-500 to-blue-500 bg-clip-text text-transparent font-extrabold'> Developers</span> 
+                    </h2>
                 </div>
                 <div className='grid lg:grid-cols-3 lg:px-[5rem] grid-cols-2 pt-10 justify-center'>
                     {stats.map((stat)=>(
-                        <div className='border border-[#0a2b25] p-4 flex flex-col gap-1 items-center justify-center opacity-80'>
-                            <h2 className='lg:text-5xl text-4xl text-teal-400 font-semibold'>{stat.number}</h2>
+                        <div className={`${isDark === true ? 'border border-gray-800' : 'border border-gray-300'} p-4 flex flex-col gap-1 items-center justify-center opacity-80`}>
+                            <h2 className='lg:text-3xl text-3xl bg-gradient-to-r from-purple-500 to-blue-500 bg-clip-text text-transparent font-semibold'>{stat.number}</h2>
                             <h2 className='text-sm'>{stat.label}</h2>
                         </div>
                     ))}
@@ -266,48 +252,35 @@ const Home = ({isDark, speed = 3000, direction = 'left' }:any) => {
             </section>
 
             {/* =========== SUPPORTED FRAMEWORK ============== */}
-            <div className='text-center lg:py-[6rem] py-[3rem] px-5' data-aos="fade-up" data-aos-duration="600">
-                <h2 className=' 2xl:text-5xl xl:text-4xl lg:text-3xl text-4xl lg:pt-3 pt-0 font-normal'>
-                    Works with your favorite <br className='lg:block hidden'/> application  
-                    <span className='bg-gradient-to-l from-[#03745b] to-[#03745b] bg-clip-text text-transparent font-bold'> framework</span>
+            <div className='text-center lg:py-[3rem] py-[2rem] px-5' data-aos="fade-up" data-aos-duration="600">
+                <h2 className=' 2xl:text-3xl xl:text-3xl lg:text-3xl text-4xl lg:pt-3 pt-0 font-normal'>
+                    Works with your favorite  
+                    <span className='bg-gradient-to-r from-purple-500 to-blue-500 bg-clip-text text-transparent font-semibold'> framework</span>
                 </h2>
-                <p className='font-light text-xl pt-5 '>Beta UI provides a consistent  developer 
-                    <br className='lg:block hidden'/> experience for most modern frameworks
+                <p className='font-light text-xl pt-5 '>Beta UI supports most modern frameworks
                 </p>
 
                 <div className='flex flex-wrap gap-4 items-center justify-center m-auto mt-10'>
                     {StackIcon.map((icon)=>(
-                        <div className={` p-8 border rounded-md text-4xl 
-                            ${isDark === true ? 'bg-gradient-to-r from-[#08110f] to-[#01110e] border-[#0a2b25]' : 'bg-gradient-to-r border-[#ced6d5] from-[#fdfdfd] to-[#f9fffe]'}`}>
+                        <div className={` p-6 border rounded-md text-4xl 
+                            ${isDark === true ? 'bg-gray-950 border-gray-800' : 'border-gray-200'}`}>
                             <p>{icon.icon}</p>
                         </div>
                     ))}
                 </div>
             </div>
 
-            {/* =========== START NOW ============== */}
-            <div className='text-center lg:py-[6rem] py-[3rem] px-5' data-aos="fade-up" data-aos-duration="600">
-                <p className='font-light text-sm pt-5 '>Start now</p>
-                <h2 className=' 2xl:text-5xl xl:text-4xl lg:text-3xl text-4xl lg:pt-3 pt-0 font-normal'>
-                    Ship your next  project faster
-                </h2>
-                
-                <div className='flex justify-center m-auto items-center mt-5 gap-3'>
-                    <Button title='Discover Components' action={handleMail}/>
-                </div>
-            </div>
-
-            <div className='text-center lg:py-[6rem] py-[3rem] px-5' data-aos="fade-up" data-aos-duration="600">
+            <div className='text-center bg-gray-950 border-gray-800 border lg:w-[60%] w-[95%] text-white rounded-3xl justify-center m-auto py-[2rem] px-5' data-aos="fade-up" data-aos-duration="600">
                 <p className='font-light text-sm pt-5 '>Sponsors</p>
-                <h2 className='2xl:text-5xl xl:text-4xl lg:text-3xl text-4xl py-4'>Sponsored by these
-                <span className='bg-gradient-to-l from-[#03745b] to-[#03745b] bg-clip-text text-transparent'> amazing </span> 
-                <br className='lg:block hidden'/>
+                <h2 className='2xl:text-3xl xl:text-3xl lg:text-3xl text-3xl py-4'>Sponsored by these
+                <span className='bg-gradient-to-r from-purple-500 to-blue-500 bg-clip-text text-transparent font-semibold'> amazing </span> 
                 companies </h2>
                 
                 <div className='flex flex-wrap gap-4 justify-center m-auto mt-10'>
                     {SponsorsIcon.map((icon:any)=>(
-                        <div className={` p-4 rounded-md text-4xl bg-[#78807e]`}>
-                            <img src={icon.image} className='w-20' alt="" />
+                        <div className={` p-4 px-6 rounded-md bg-gray-800`}>
+                            <img src={icon.image} className='w-20 m-auto' alt="" />
+                            <p className='pt-1 text-[10px] text-center'>{icon.name}</p>
                         </div>
                     ))}
                 </div>
